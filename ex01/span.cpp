@@ -6,7 +6,7 @@
 /*   By: sikeda <sikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 01:23:42 by sikeda            #+#    #+#             */
-/*   Updated: 2021/11/26 22:51:50 by sikeda           ###   ########.fr       */
+/*   Updated: 2021/11/26 22:55:51 by sikeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ unsigned	Span::shortestSpan() const
 	{
 		if (p + 1 != sorted.end())
 			if (static_cast<unsigned>(*(p + 1) - *p) < shortest_span)
-				shortest_span = *(p + 1) - *p;
+				shortest_span = static_cast<unsigned>(*(p + 1) - *p);
 	}
 	return shortest_span;
 }
