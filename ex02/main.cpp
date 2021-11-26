@@ -6,7 +6,7 @@
 /*   By: sikeda <sikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 01:18:38 by sikeda            #+#    #+#             */
-/*   Updated: 2021/11/26 01:18:39 by sikeda           ###   ########.fr       */
+/*   Updated: 2021/11/26 23:25:02 by sikeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ int	main()
 		mstack.push(5);
 		// {5, 3, 5, 737}
 		mstack.push(737);
-		//[...]
 		// {5, 3, 5, 737, 0}
 		mstack.push(0);
 
@@ -92,7 +91,7 @@ int	main()
 		}
 
 
-		print_header("copy constructor");
+		print_header("copy constructor (std::stack)");
 
 		std::stack<int> s(mstack);
 		std::cout << s.top() << std::endl;
@@ -107,7 +106,7 @@ int	main()
 			std::cout << *p << std::endl;
 
 
-		print_header("assignment operator-1");
+		print_header("assignment operator-1 (std::stack)");
 
 		std::stack<int> s2;
 		s2 = mstack;

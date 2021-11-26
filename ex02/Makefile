@@ -35,3 +35,6 @@ fclean:		clean
 re:			fclean $(NAME)
 
 -include	$(DEPENDS)
+
+debug:
+			$(MAKE) CXXFLAGS="$(CXXFLAGS) -D DEBUG=1"
