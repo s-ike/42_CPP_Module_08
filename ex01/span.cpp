@@ -6,7 +6,7 @@
 /*   By: sikeda <sikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 01:23:42 by sikeda            #+#    #+#             */
-/*   Updated: 2021/11/25 10:52:11 by sikeda           ###   ########.fr       */
+/*   Updated: 2021/11/26 22:51:50 by sikeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,16 @@ unsigned	Span::shortestSpan() const
 	if (_vector.size() < 2)
 		throw std::logic_error("no span to find");
 
-	std::vector<int> copy = _vector;
-	std::vector<int>::iterator min1 = std::min_element(copy.begin(), copy.end());
-	int min1_int = *min1;
-	copy.erase(min1);
-	std::vector<int>::iterator min2 = std::min_element(copy.begin(), copy.end());
-	int min2_int = *min2;
-	return min1_int < min2_int ? abs(min2_int - min1_int) : abs(min1_int - min2_int);
+	std::vector<int> sorted = _vector;
+	sort(sorted.begin(), sorted.end());
+	unsigned shortest_span = std::numeric_limits<unsigned>::max();
+	for (std::vector<int>::const_iterator p = sorted.begin(); p != sorted.end(); ++p)
+	{
+		if (p + 1 != sorted.end())
+			if (static_cast<unsigned>(*(p + 1) - *p) < shortest_span)
+				shortest_span = *(p + 1) - *p;
+	}
+	return shortest_span;
 }
 
 unsigned	Span::longestSpan() const
@@ -74,7 +77,7 @@ unsigned	Span::longestSpan() const
 	std::vector<int> copy = _vector;
 	std::vector<int>::iterator min = std::min_element(copy.begin(), copy.end());
 	std::vector<int>::iterator max = std::max_element(copy.begin(), copy.end());
-	return abs(*max - *min);
+	return *max - *min;
 }
 
 void	Span::addNumbers(int start, unsigned n, int jump)

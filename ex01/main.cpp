@@ -6,7 +6,7 @@
 /*   By: sikeda <sikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 10:57:26 by sikeda            #+#    #+#             */
-/*   Updated: 2021/11/25 10:57:27 by sikeda           ###   ########.fr       */
+/*   Updated: 2021/11/26 22:53:23 by sikeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,12 +134,13 @@ int	main()
 	print_header("normal test");
 	try
 	{
-		Span	sp = Span(5);
+		Span	sp = Span(6);
 
 		sp.addNumber(100);
 		sp.addNumber(-100);
 		sp.addNumber(-200);
 		sp.addNumber(200);
+		sp.addNumber(-300);
 		sp.addNumber(-200);
 
 		sp.print_vector_int();
