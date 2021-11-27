@@ -6,7 +6,7 @@
 /*   By: sikeda <sikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 10:57:26 by sikeda            #+#    #+#             */
-/*   Updated: 2021/11/26 22:53:23 by sikeda           ###   ########.fr       */
+/*   Updated: 2021/11/27 18:58:43 by sikeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,6 @@ int	main()
 		sp.addNumber(9);
 		sp.addNumber(11);
 		sp.addNumber(11);
-
-		sp.print_vector_int();
-
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{

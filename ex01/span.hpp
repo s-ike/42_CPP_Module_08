@@ -6,7 +6,7 @@
 /*   By: sikeda <sikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 01:22:32 by sikeda            #+#    #+#             */
-/*   Updated: 2021/11/25 10:47:08 by sikeda           ###   ########.fr       */
+/*   Updated: 2021/11/27 18:48:04 by sikeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 	unsigned	shortestSpan() const;
 	unsigned	longestSpan() const;
 
-	void	addNumbers(int start, unsigned n, int jump);
+	void	addNumbers(int start, unsigned n, int span);
 	void	print_vector_int() const;
 };
 

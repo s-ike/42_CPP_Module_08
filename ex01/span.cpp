@@ -6,7 +6,7 @@
 /*   By: sikeda <sikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 01:23:42 by sikeda            #+#    #+#             */
-/*   Updated: 2021/11/26 22:55:51 by sikeda           ###   ########.fr       */
+/*   Updated: 2021/11/27 18:48:18 by sikeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ unsigned	Span::shortestSpan() const
 		throw std::logic_error("no span to find");
 
 	std::vector<int> sorted = _vector;
-	sort(sorted.begin(), sorted.end());
+	std::sort(sorted.begin(), sorted.end());
 	unsigned shortest_span = std::numeric_limits<unsigned>::max();
 	for (std::vector<int>::const_iterator p = sorted.begin(); p != sorted.end(); ++p)
 	{
@@ -80,7 +80,7 @@ unsigned	Span::longestSpan() const
 	return *max - *min;
 }
 
-void	Span::addNumbers(int start, unsigned n, int jump)
+void	Span::addNumbers(int start, unsigned n, int span)
 {
 	if (_max < n)
 		throw std::out_of_range("out of range");
@@ -89,7 +89,7 @@ void	Span::addNumbers(int start, unsigned n, int jump)
 	for (unsigned i = 0; i < n; i++)
 	{
 		_vector.push_back(num);
-		num += jump;
+		num += span;
 	}
 }
 
