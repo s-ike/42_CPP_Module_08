@@ -6,7 +6,7 @@
 /*   By: sikeda <sikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 01:18:38 by sikeda            #+#    #+#             */
-/*   Updated: 2021/11/26 23:25:02 by sikeda           ###   ########.fr       */
+/*   Updated: 2021/11/27 19:02:57 by sikeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,19 +126,23 @@ int	main()
 
 	// segmentation fault
 	{
-		// MutantStack<int> mstack;
+		/*
+		MutantStack<int> mstack;
 
-		// print_header("MutantStack empty pop");
+		print_header("MutantStack empty pop");
 
-		// mstack.pop();
+		mstack.pop();
+		*/
 	}
 	// segmentation fault
 	{
-		// std::stack<int> stack;
+		/*
+		std::stack<int> stack;
 
-		// print_header("Stack empty pop");
+		print_header("Stack empty pop");
 
-		// stack.pop();
+		stack.pop();
+		*/
 	}
 
 	leaks();
