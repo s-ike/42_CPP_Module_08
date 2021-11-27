@@ -6,7 +6,7 @@
 /*   By: sikeda <sikeda@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 02:09:40 by sikeda            #+#    #+#             */
-/*   Updated: 2021/11/23 12:52:07 by sikeda           ###   ########.fr       */
+/*   Updated: 2021/11/27 17:26:07 by sikeda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@ void	print_header(const std::string &str)
 	std::cout << COLOR_CYAN "\n[ " << str << " ]" COLOR_RESET << std::endl;
 }
 
+template <class T>
+void	print_container(T& container)
+{
+	std::cout << "{ ";
+	for (typename T::iterator it = container.begin(); it != container.end(); ++it)
+		std::cout <<  *it << ' ';
+	std::cout << '}' << std::endl;
+}
+
 int	main(void)
 {
 	{
@@ -39,9 +48,7 @@ int	main(void)
 
 			for (std::vector<int>::iterator p = c.begin(); p != c.end(); ++p)
 				*p = ++value;
-			for (std::vector<int>::const_iterator p = c.begin(); p != c.end(); ++p)
-				std::cout << *p << ' ';
-			std::cout << '\n';
+			print_container(c);
 
 			std::cout << *(easyfind(c, 4)) << '\n';
 			std::cout << *(easyfind(c, 5)) << '\n';
@@ -61,9 +68,7 @@ int	main(void)
 
 			for (std::list<int>::iterator p = c.begin(); p != c.end(); ++p)
 				*p = ++value;
-			for (std::list<int>::const_iterator p = c.begin(); p != c.end(); ++p)
-				std::cout << *p << ' ';
-			std::cout << '\n';
+			print_container(c);
 
 			std::cout << *(easyfind(c, 4)) << '\n';
 			std::cout << *(easyfind(c, 5)) << '\n';
@@ -83,9 +88,7 @@ int	main(void)
 
 			for (std::deque<int>::iterator p = c.begin(); p != c.end(); ++p)
 				*p = ++value;
-			for (std::deque<int>::const_iterator p = c.begin(); p != c.end(); ++p)
-				std::cout << *p << ' ';
-			std::cout << '\n';
+			print_container(c);
 
 			std::cout << *(easyfind(c, 4)) << '\n';
 			std::cout << *(easyfind(c, 5)) << '\n';
@@ -103,9 +106,7 @@ int	main(void)
 			const int a[] = {1, 2, 3, 4, 5};
 			std::set<int> c(a, a + 5);
 
-			for (std::set<int>::const_iterator p = c.begin(); p != c.end(); ++p)
-				std::cout << *p << ' ';
-			std::cout << '\n';
+			print_container(c);
 
 			std::cout << *(easyfind(c, 4)) << '\n';
 			std::cout << *(easyfind(c, 5)) << '\n';
